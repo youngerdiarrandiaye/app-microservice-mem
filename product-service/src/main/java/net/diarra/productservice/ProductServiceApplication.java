@@ -23,14 +23,17 @@ public class ProductServiceApplication {
 				Product product = Product.builder()
 						.name("PC")
 						.quantity(6)
+						.status(false)
 						.build();
 				Product product1 = Product.builder()
 						.name("CLAVIER")
 						.quantity(10)
+						.status(true)
 						.build();
 				Product product2 = Product.builder()
 						.name("SOURIS")
 						.quantity(112)
+						.status(true)
 						.build();
 					// Save users to the database
 			productRepository .save(product);

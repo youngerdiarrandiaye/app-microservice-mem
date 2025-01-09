@@ -1,70 +1,40 @@
 <div class="container mt-5">
   <div class="card">
     <div class="card-body">
-      <div class="d-flex justify-content-between align-items-center">
+      <p class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-success" routerLink="/">
+          <i class="bi bi-arrow-return-left"></i>
+        </button>
         <input type="text"  placeholder="Rechercher un produit..." class="form-control">
         <button class="btn btn-success">
           <i class="bi bi-search"></i>
         </button>
-      </div>
       <div class="table-responsive mt-3">
         <table class="table table-striped">
           <thead>
           <tr>
             <th scope="col">Nom</th>
             <th scope="col">Quantite</th>
-            <th scope="col">Prix</th>
             <th scope="col">Status</th>
             <th scope="col">Actions</th>
           </tr>
           </thead>
           <tbody>
           <tbody>
-          <tr>
-            <td>PC</td>
-            <td>65</td>
-            <td>1000</td>
-            <td>
-              <button class="btn btn-outline-success">
-
-              </button>
-            </td>
-            <td>
-              <button  class="btn btn-outline-danger">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Claviers</td>
-            <td>65</td>
-            <td>3000</td>
-            <td>
-              <button class="btn btn-outline-success">
-
-              </button>
-            </td>
-            <td>
-              <button  class="btn btn-outline-danger">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>SOURIS</td>
-            <td>5</td>
-            <td>1000</td>
-            <td>
-              <button class="btn btn-outline-success">
-
-              </button>
-            </td>
-            <td>
-              <button  class="btn btn-outline-danger">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button (click)="handleCheckProduct(product)" class="btn btn-outline-success">
+              <i class="bi" [ngClass]="product.status ? 'bi-check' : 'bi-circle'"></i>
+            </button>
+          </td>
+          <td>
+            <button  class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
           </tbody>
         </table>
       </div>

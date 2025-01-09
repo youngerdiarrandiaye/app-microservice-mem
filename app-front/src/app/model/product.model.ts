@@ -1,8 +1,9 @@
 export interface Product {
     id:number,
     name:string,
-    quantite:number,
-    price:number,
-    checked:boolean
+    quantity:number,
+    status:boolean
+   // price:number,
+    //checked:boolean
 
 }

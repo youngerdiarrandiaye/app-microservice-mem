@@ -49,3 +49,21 @@ e
 5app-front/src/app/services/product-service.service.ts,c\b\cbc2b7c88d862cf13e01274a556e62f9dfcd99ea
 X
 (app-front/src/app/model/product.model.ts,5\5\55b857bd3dc3192466b9fa4039e8af17a8b79df6
+„
+Tproduct-service/src/main/java/net/diarra/productservice/security/SecurityConfig.java,4\5\45b3365072a0d412b5b17a22efe7952fa1f83b78
+†
+Vproduct-service/src/main/java/net/diarra/productservice/security/JwtAuthConverter.java,5\b\5b1e55c17334a2f227804e5abfe5750c48d793c0
+^
+.app-front/src/app/product/product.component.ts,9\b\9b5a451ef9fea4ea8c124102804e86c4f9fc0bd5
+_
+/app-front/src/app/product/product.component.css,a\e\ae7df89bfaf2fe29a2a5bf96555da03e21c92643
+O
+app-front/src/app/app.module.ts,5\8\58954d0155e99ef643858181343a54dd8cc6f8b7
+R
+"app-front/src/app/app.component.ts,1\a\1aba60e92abfd1591ef79e8cd8358e81d5cfa75e
+Z
+*app-front/src/assets/silent-check-sso.html,3\a\3ab3056be5e6b57551a53b197edfd5a4b004ce2b
+V
+&app-front/src/app/guards/auth.guard.ts,f\0\f027511587a2135ed03e759e307ddc000b5d0d35
+p
+@app-front/src/app/dashboardproduct/dashboardproduct.component.ts,7\8\781fe96afa4bd33f4072d91ea694109e5b8700e8

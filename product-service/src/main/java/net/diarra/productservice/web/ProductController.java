@@ -2,13 +2,15 @@ package net.diarra.productservice.web;
 
 import net.diarra.productservice.entities.Product;
 import net.diarra.productservice.repository.ProductRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
+@RequestMapping("/api")
 public class ProductController {
     private ProductRepository productRepository;
 
@@ -16,13 +18,20 @@ public class ProductController {
         this.productRepository= productRepository;
     }
 
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     @GetMapping("/product")
     public List<Product> product(){
         return productRepository.findAll();
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/product/{id}")
     public Product productById(@PathVariable Long id ){
         return  productRepository.findById(id).get();
+    }
+
+    @GetMapping("/auth")
+    public Authentication authentication(Authentication authentication){
+        return authentication;
     }
 }

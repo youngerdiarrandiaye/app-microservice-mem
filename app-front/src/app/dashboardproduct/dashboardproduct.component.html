@@ -1,19 +1,46 @@
 <nav class="p-3">
   <ul class="nav nav-pills">
-   <li>
+    <li class="nav-item">
       <button routerLink="" class="btn btn-outline-success ms-1">Home
         <i class="bi bi-house text-success"></i>
       </button>
     </li>
-    <li>
+    <li class="nav-item">
       <button routerLink="/product" class="btn btn-outline-success ms-1">Products
         <i class="bi bi-arrow-down-up text-success"></i>
       </button>
     </li>
-    <li>
+    <li class="nav-item">
       <button routerLink="/ajouter-produit" class="btn btn-outline-success ms-1">New Products
         <i class="bi bi-plus-circle text-success"></i>
       </button>
+    </li>
+    <li class="nav-item dropdown ms-3">
+      <a
+        class="nav-link dropdown-toggle btn btn-outline-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <span *ngIf="profile; else login_template">{{ profile.email }}</span>
+        <ng-template #login_template>
+          Login
+        </ng-template>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+          <a class="dropdown-item" (click)="handleLogin()">Login</a>
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="handleLogout()">Logout</a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="btn btn-outline-danger ms-1" (click)="handleLogout()">Logout</a>
     </li>
   </ul>
 </nav>

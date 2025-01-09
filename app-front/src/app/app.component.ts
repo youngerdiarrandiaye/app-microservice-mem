@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {KeycloakService} from 'keycloak-angular';
+import {KeycloakProfile} from "keycloak-js";
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,28 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app-microservice-front';
+
+  public profile! : KeycloakProfile;
+  constructor(public keycloakService : KeycloakService) {
+  }
+
+  ngOnInit() {
+    if(this.keycloakService.isLoggedIn()){
+      this.keycloakService.loadUserProfile().then(profile=>{
+        this.profile=profile;
+      });
+    }
+  }
+
+  async handleLogin() {
+    await this.keycloakService.login({
+      redirectUri: window.location.origin
+    });
+  }
+
+  handleLogout(){
+    this.keycloakService.logout(window.location.origin);
+  }
 }

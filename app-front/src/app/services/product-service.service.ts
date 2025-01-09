@@ -10,8 +10,12 @@ export class ProductServiceService {
 
   constructor(private http:HttpClient) { }
 
-/*  public getProduct(page:number=1,size:number=7):Observable<Array<Product>>{
-    return   this.http.get<Array<Product>>( `http://localhost:8089/products?_page=${page}&_limit=${size}`);
-  }*/
-
+  public getProduct():Observable<Array<Product>>{
+    return   this.http.get<Array<Product>>( `http://localhost:8082/api/product`);
+    return   this.http.get<Array<Product>>( `http://localhost:8082/api/product`);
+  }
+  public checkProduct(product:Product):Observable<Product>{
+    return    this.http.patch<Product>(`http://localhost:8082/api/product/${product.id}`,
+      {status:!product.status});
+  }
 }
