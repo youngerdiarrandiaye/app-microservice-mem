@@ -1,0 +1,15 @@
+
+X	java:S1252"<This block of commented-out lines of code should be removed.(œŸïÊ8Ÿ—¢«Æ2
+W	java:S125>"<This block of commented-out lines of code should be removed.(’ëÙ98Ëˆ «Æ2
+g
+java:S1128"KRemove this unused import 'org.springframework.web.cors.CorsConfiguration'.(î¤·`8¢—¢«Æ2
+s
+java:S1128"QRemove this unused import 'org.springframework.web.cors.CorsConfigurationSource'.(ŒºÏøşÿÿÿÿ8¢—¢«Æ2
+{
+java:S1128"YRemove this unused import 'org.springframework.web.cors.UrlBasedCorsConfigurationSource'.(µ²İûùÿÿÿÿ8£—¢«Æ2
+}
+java:S1128"[Remove this unused import 'org.springframework.web.servlet.config.annotation.CorsRegistry'.(âÁ’©şÿÿÿÿ8Ìˆ «Æ2
+
+java:S1128"_Remove this unused import 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer'.(’µ¥Êÿÿÿÿÿ8Íˆ «Æ2
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8¤—¢«Æ2

@@ -3,14 +3,17 @@ spring:
     gateway:
       globalcors:
         corsConfigurations:
-          '[/**]': # Autorise toutes les routes
-            allowedOrigins: "*" # Origine de votre frontend Angular
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:4200
+            allowedHeaders: "*"
             allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
-            allowedHeaders:
-              - "*"
-            allowCredentials: true
 
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG

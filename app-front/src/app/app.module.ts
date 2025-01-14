@@ -8,6 +8,8 @@ import { ProductComponent } from './product/product.component';
 import { AjouterProduitComponent } from './ajouter-produit/ajouter-produit.component';
 import {HttpClientModule} from '@angular/common/http';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
+import {CommonModule, NgForOf} from '@angular/common';
+import {environment} from '../environments/environment';
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -17,13 +19,16 @@ function initializeKeycloak(keycloak: KeycloakService) {
         url: 'http://localhost:8080',
         realm: 'master',
         clientId: 'app-front-client',
+        /*url: environment.keycloak.url,
+        realm: environment.keycloak.realm,
+        clientId: environment.keycloak.clientId,*/
       },
       initOptions: {
         onLoad: 'check-sso',
         silentCheckSsoRedirectUri:
           window.location.origin + '/assets/silent-check-sso.html'
       }
-    });
+    })
 }
 @NgModule({
   declarations: [
@@ -36,7 +41,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    NgForOf,
+    CommonModule
   ],
   providers: [
     {provide : APP_INITIALIZER, useFactory : initializeKeycloak, multi :true, deps : [KeycloakService]}
