@@ -25,4 +25,4 @@ FROM nginx:latest
 COPY --from=build /usr/local/app/dist/app-microservice-front/browser /usr/share/nginx/html
 
 # Expose port 84
-EXPOSE 84
+EXPOSE 80

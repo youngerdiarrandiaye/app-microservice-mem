@@ -10,10 +10,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {CommonModule, NgForOf} from '@angular/common';
 import {environment} from '../environments/environment';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
-  return () =>
+  return (
+
+  ) =>
     keycloak.init({
       config: {
         url: 'http://localhost:8080',
@@ -24,6 +27,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
         clientId: environment.keycloak.clientId,*/
       },
       initOptions: {
+
         onLoad: 'check-sso',
         silentCheckSsoRedirectUri:
           window.location.origin + '/assets/silent-check-sso.html'
@@ -37,14 +41,15 @@ function initializeKeycloak(keycloak: KeycloakService) {
     ProductComponent,
     AjouterProduitComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    KeycloakAngularModule,
-    NgForOf,
-    CommonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        KeycloakAngularModule,
+        NgForOf,
+        CommonModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {provide : APP_INITIALIZER, useFactory : initializeKeycloak, multi :true, deps : [KeycloakService]}
   ],

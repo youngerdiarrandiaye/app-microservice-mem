@@ -69,8 +69,6 @@ p
 @app-front/src/app/dashboardproduct/dashboardproduct.component.ts,7\8\781fe96afa4bd33f4072d91ea694109e5b8700e8
 S
 #app-front/src/app/app.component.css,6\4\64bbded2030b6d33898fb26037bd71ed3f46152f
-z
-Jgatewaye-service/src/main/java/com/example/gatewayeservice/CorsConfig.java,f\d\fd5e26593afe220aea48bf2683f6655427787214
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 D
@@ -87,3 +85,7 @@ Y
 )app-front/src/environments/environment.ts,7\1\712374b06b30e40a531a3b46317c60f2ec7351c4
 [
 +app-front/src/app/guards/auth.guard.spec.ts,a\4\a4b1a914ed3b6a35cd136b735de905c760f00203
+n
+>app-front/src/app/ajouter-produit/ajouter-produit.component.ts,8\9\89611327a5fe496afe0d0bd36d56a952aa36be75
+o
+?app-front/src/app/ajouter-produit/ajouter-produit.component.css,6\e\6e46231c1be1f00634f74ac6b690e102db3c8923

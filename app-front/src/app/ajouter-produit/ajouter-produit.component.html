@@ -2,28 +2,24 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header" style="background-color: #6c757d;">
+        <div class="card-header" style="background-color: #96ceff;">
           <h4 class="mb-0" style="color: #fff;">Ajouter Produit</h4>
         </div>
         <div class="card-body">
-          <form>
+          <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
             <div class="mb-3">
               <label for="name" class="form-label">Nom du Produit</label>
               <input id="name" class="form-control" formControlName="name">
             </div>
             <div class="mb-3">
-              <label for="quantite" class="form-label">Quantite du Produit</label>
-              <input id="quantite" class="form-control" type="number" formControlName="quantite">
-            </div>
-            <div class="mb-3">
-              <label for="price" class="form-label">Prix du Produit</label>
-              <input id="price" class="form-control" type="number" formControlName="price">
+              <label for="quantity" class="form-label">Quantite du Produit</label>
+              <input id="quantity" class="form-control" type="number" formControlName="quantity">
             </div>
             <div class="mb-3 form-check">
               <input id="checked" type="checkbox" class="form-check-input" formControlName="checked">
               <label for="checked" class="form-check-label">Vérifié</label>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #6c757d;">Enregistrer</button>
+            <button type="submit" [disabled]="productForm.invalid" class="btn btn-primary" style="background-color: #96ceff;color:black">Enregistrer</button>
           </form>
         </div>
       </div>
